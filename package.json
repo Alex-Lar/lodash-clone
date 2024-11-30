@@ -1,5 +1,5 @@
 {
-  "name": "lodash-clone-project",
+  "name": "lodash-clone",
   "version": "1.0.0",
   "description": "Just lodash clone",
   "main": "dist/index.js",
