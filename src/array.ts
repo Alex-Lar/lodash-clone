@@ -19,3 +19,23 @@ export function chunk<T>(array: Array<T>, size: number = 1): Array<Array<T>> {
     array.slice(index * size, index * size + size)
   )
 }
+
+/**
+ * Creates an array with all falsey values removed.
+ * The values false, null, 0, "", undefined, and NaN are falsey.
+ *
+ * @example
+ *
+ * compact(["a", "b", false])
+ * // => ["a", "b"]
+ *
+ * compact(["a", false, null, 0, "", undefined, NaN, "b"])
+ * // => ["a", "b"]
+ */
+export function compact<T>(array: Array<T>): Array<T> {
+  if (!Array.isArray(array)) {
+    throw new Error('Input must be an array.')
+  }
+
+  return array.filter((el) => el)
+}
