@@ -10,7 +10,8 @@
     "test": "jest"
   },
   "keywords": [
-    "lodash"
+    "lodash",
+    "lodash-clone"
   ],
   "author": "Alexander Larin",
   "license": "MIT",
