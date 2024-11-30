@@ -1,0 +1,28 @@
+{
+  "name": "lodash-clone-project",
+  "version": "1.0.0",
+  "description": "Just lodash clone",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint ./src",
+    "format": "prettier --config .prettierrc ./src --write",
+    "test": "jest"
+  },
+  "keywords": [
+    "lodash"
+  ],
+  "author": "Alexander Larin",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@types/jest": "^29.5.14",
+    "eslint": "^9.16.0",
+    "globals": "^15.12.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.4.1",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.16.0"
+  }
+}
