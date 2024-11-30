@@ -15,6 +15,10 @@ export function chunk<T>(array: Array<T>, size: number = 1): Array<Array<T>> {
     throw new Error('Size must be a positive integer.')
   }
 
+  if (!Array.isArray(array)) {
+    throw new Error('Input must be an array.')
+  }
+
   return Array.from({ length: Math.ceil(array.length / size) }, (_, index) =>
     array.slice(index * size, index * size + size)
   )
