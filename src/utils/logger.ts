@@ -1,8 +1,12 @@
 class Logger {
   static logArray2d<T>(arr: Array<Array<T>>): void {
     for (let i = 0; i < arr.length; i++) {
-      console.log(`[ ${arr[i].toString().replaceAll(',', ', ')} ] `)
+      this.logArray(arr[i])
     }
+  }
+
+  static logArray<T>(arr: Array<T>): void {
+    console.log(`[ ${arr.toString().replaceAll(',', ', ')} ] `)
   }
 }
 
