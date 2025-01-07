@@ -43,3 +43,32 @@ export function compact<T>(array: Array<T>): Array<T> {
 
   return array.filter((el) => el)
 }
+
+/**
+ * Creates a new array concatenating array with any additional arrays and/or values.
+ *
+ * @example
+ *
+ * let array = [1];
+ * let other = concat(array, 2, [3], [[4]]);
+ *
+ * console.log(other);
+ * // => [1, 2, 3, [4]]
+ *
+ * console.log(array);
+ * // => [1]
+ */
+export function concat<T>(array: Array<T>, ...args: Array<unknown>): Array<T> {
+  const temp = []
+
+  if (!Array.isArray(array)) {
+    throw new Error('Error: first parameter must be an array.')
+  }
+
+  for (const el of args) {
+    temp.push(el)
+  }
+
+  return Array.from([...array, ...(temp.flat())]) as Array<T>
+}
+
