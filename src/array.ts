@@ -69,6 +69,28 @@ export function concat<T>(array: Array<T>, ...args: Array<unknown>): Array<T> {
     temp.push(el)
   }
 
-  return Array.from([...array, ...(temp.flat())]) as Array<T>
+  return Array.from([...array, ...temp.flat()]) as Array<T>
 }
 
+/**
+ * Creates an array of array values not included in the other given arrays using SameValueZero for equality comparisons.
+ * The order and references of result values are determined by the first array.
+ *
+ * @example
+ *
+ * difference([2, 1], [2, 3]);
+ * // => [1]
+ */
+export function difference<T>(array: Array<T>, values: Array<T>): Array<T> {
+  const temp = []
+
+  if (!Array.isArray(array) || !Array.isArray(values)) {
+    throw new Error('Error: first and second parameters must be an array.')
+  }
+
+  for (const el of array) {
+    if (!values.includes(el)) temp.push(el)
+  }
+
+  return temp
+}
